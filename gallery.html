@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumina Gallery</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="gallery.css">
+</head>
+<body>
+
+  <!-- Header -->
+  <header>
+    <div class="logo">Lum<span>ina</span></div>
+    <div class="header-meta">Visual Archive — 2024</div>
+  </header>
+
+  <!-- Category Filter Bar -->
+  <div class="filter-bar" id="filterBar">
+    <button class="filter-btn active" data-cat="all">All     <span class="filter-count" id="count-all"></span></button>
+    <button class="filter-btn" data-cat="nature">Nature  <span class="filter-count" id="count-nature"></span></button>
+    <button class="filter-btn" data-cat="urban">Urban   <span class="filter-count" id="count-urban"></span></button>
+    <button class="filter-btn" data-cat="portrait">Portrait <span class="filter-count" id="count-portrait"></span></button>
+    <button class="filter-btn" data-cat="abstract">Abstract <span class="filter-count" id="count-abstract"></span></button>
+    <button class="filter-btn" data-cat="travel">Travel  <span class="filter-count" id="count-travel"></span></button>
+  </div>
+
+  <!-- Gallery Grid -->
+  <div class="gallery-wrapper">
+    <div class="gallery-grid" id="galleryGrid">
+      <div class="no-results" id="noResults">No images in this category</div>
+    </div>
+  </div>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-label="Image viewer">
+    <div class="lightbox-inner">
+
+      <button class="lb-close" id="lbClose" aria-label="Close">✕</button>
+
+      <div class="lightbox-img-wrap">
+        <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">←</button>
+        <img src="" alt="" id="lbImg">
+        <button class="lb-nav lb-next" id="lbNext" aria-label="Next">→</button>
+      </div>
+
+      <div class="lightbox-info">
+        <div>
+          <div class="lightbox-title" id="lbTitle"></div>
+          <div class="lightbox-subtitle" id="lbSubtitle"></div>
+        </div>
+        <div class="lightbox-counter" id="lbCounter"></div>
+      </div>
+
+      <!-- Image Filters -->
+      <div class="lb-filters">
+        <button class="lb-filter-btn active" data-filter="none">Original</button>
+        <button class="lb-filter-btn" data-filter="grayscale(1)">B&amp;W</button>
+        <button class="lb-filter-btn" data-filter="sepia(0.7)">Sepia</button>
+        <button class="lb-filter-btn" data-filter="saturate(2) hue-rotate(10deg)">Vivid</button>
+        <button class="lb-filter-btn" data-filter="invert(1) hue-rotate(180deg)">Invert</button>
+        <button class="lb-filter-btn" data-filter="contrast(1.4) brightness(1.1)">Dramatic</button>
+      </div>
+
+      <!-- Thumbnail Strip -->
+      <div class="lb-thumbs" id="lbThumbs"></div>
+
+    </div>
+  </div>
+
+  <script src="gallery.js"></script>
+</body>
+</html>
